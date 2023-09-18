@@ -1,6 +1,6 @@
-const regex = /^(\d+)+$/; // Vulnerable regular expression
+const regex = /^([a-z]+)+$/;
 
-const input = '11111111111111111111111111111111111111111111111111111111!'; // Input that can trigger ReDoS
+const input = 'a'.repeat(25) + '!'; // This input can trigger ReDoS
 
 if (regex.test(input)) {
   console.log('Valid input');
